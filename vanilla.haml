@@ -1,1 +1,50 @@
 !!!5
+
+%html
+  %head
+    %title
+      != "{Title}"
+    %link{:rel => "shortcut icon", :href => "{Favicon}"}
+    %link{:rel => "alternate", :type => "application/rss+xml", :href => "{RSS}"}
+    != "{block:Description}"
+    %meta{:name => "description", :content => "{MetaDescription}"}
+    != "{/block:Description}"
+  %body
+    %h1
+      != "{Title}"
+    
+    != "{block:Description}"
+      %p{:id => "description"}
+        != "{Description}"
+    != "{/block:Description}"
+
+    %ol#posts
+      != "{block:Posts}"
+      
+      != "{block:Text}"
+      %li{:class => ["post", "text"]}
+        != "{block:Title}"
+        %h3
+          %a{:href => "{Permalink}"}
+            != "{Title}"
+        != "{/block:Title}"
+        != "{Body}"
+      != "{/block:Text}"
+      
+
+      != "{block:Photo}"
+      %li{:class => ["post", "photoset"]}
+        %img{:src => "{PhotoURL-500}", :alt => "{PhotoAlt}"}
+        != "{block:Caption}"
+        .caption
+          != "{Caption}"
+        != "{/block:Caption}"
+      != "{/block:Photo}"
+
+      != "{block:Photoset}"
+        %li{:class => ["post", "photoset"]}
+
+      != "{/block:Photoset}"
+
+      != "{/block:Posts}"
+
