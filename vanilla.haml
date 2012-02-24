@@ -14,8 +14,8 @@
       != "{Title}"
     
     != "{block:Description}"
-      %p{:id => "description"}
-        != "{Description}"
+    %p{:id => "description"}
+      != "{Description}"
     != "{/block:Description}"
 
     %ol#posts
@@ -43,14 +43,14 @@
 
 
       != "{block:Photoset}"
-        %li{:class => ["post", "photoset"]}
-          != "{Photoset-500}"
-          != "{block:Caption}"
-          .caption
-            != "{Caption}"
-          != "{/block:Caption}"
+      %li{:class => ["post", "photoset"]}
+        != "{Photoset-500}"
+        != "{block:Caption}"
+        .caption
+          != "{Caption}"
+        != "{/block:Caption}"
       != "{/block:Photoset}"
-word
+
 
       != "{block:Quote}"
       %li{:class => ["post", "quote"]}
@@ -73,27 +73,54 @@ word
         != "{/block:Description}"
       != "{/block:Link}"  
        
-          
+      != "{block:Chat}"     
       %li{:class => ["post", "chat"]}        
         != "{block:Title}"
         %h3
           %a{:href => "{Permalink}", :alt => "Permalink" }
             != "{Title}"
-        != "{block:Lines}"
-        %li{:class => ["{Alt}", "user_{UserNumber}"]}
-        != "{block:Label}"
-        %span{:class => "label"}
-          != "{Label}"
-        != "{/block:Label}"
-        != "{Line}" 
+
+        %ul{:class => "chat"}
+
+          != "{block:Lines}"
+          %li{:class => ["{Alt}", "user_{UserNumber}"]}
+            != "{block:Label}"
+            %span{:class => "label"}
+              != "{Label}"
+            != "{/block:Label}"
+            != "{Line}" 
         != "{/block:Lines}}"
+      != "{/block:Chat}}"
+
+      != "{block:Video}"
+      %li{:class => ["post", "audio"]}
+        != "{Video-500}"
+        != "{block:Caption}"
+        .caption
+          != "{Caption}"
+        != "{/block:Caption}"
+      != "{/block:Vieo}"
+
+      != "{block:Audio}"
+      %li{:class => ["post","audio"]}
+        != "{AudioPlayerBlack}"
+        != "{block:Caption}"
+        .caption
+          != "{Caption}"
+        != "{/block:Caption}"
+      != "{/block:Audio}"
 
 
-      
-      
-        
-              
-        
 
-      != "{/block:Posts}"
+    != "{/block:Posts}"
 
+    %p{:id => "footer"}
+      != "{block:PreviousPage}"
+      %a{:href => "{PreviousPage}", :alt => "PreviousPage" }
+        ="&#171; Previous"
+      != "{/block:PreviousPage}"
+
+      != "{block:NextPage}"
+      %a{:href => "{NextPage}", :alt => "NextPage" }
+        = "Next &#187;"
+      != "{/block:NextPage}"
