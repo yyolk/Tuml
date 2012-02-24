@@ -50,7 +50,7 @@
             != "{Caption}"
           != "{/block:Caption}"
       != "{/block:Photoset}"
-
+word
 
       != "{block:Quote}"
       %li{:class => ["post", "quote"]}
@@ -71,10 +71,24 @@
         .description
           != "{Description}"
         != "{/block:Description}"
-        
-        
+      != "{/block:Link}"  
+       
           
-        
+      %li{:class => ["post", "chat"]}        
+        != "{block:Title}"
+        %h3
+          %a{:href => "{Permalink}", :alt => "Permalink" }
+            != "{Title}"
+        != "{block:Lines}"
+        %li{:class => ["{Alt}", "user_{UserNumber}"]}
+        != "{block:Label}"
+        %span{:class => "label"}
+          != "{Label}"
+        != "{/block:Label}"
+        != "{Line}" 
+        != "{/block:Lines}}"
+
+
       
       
         
