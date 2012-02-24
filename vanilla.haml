@@ -41,10 +41,45 @@
         != "{/block:Caption}"
       != "{/block:Photo}"
 
+
       != "{block:Photoset}"
         %li{:class => ["post", "photoset"]}
-
+          != "{Photoset-500}"
+          != "{block:Caption}"
+          .caption
+            != "{Caption}"
+          != "{/block:Caption}"
       != "{/block:Photoset}"
+
+
+      != "{block:Quote}"
+      %li{:class => ["post", "quote"]}
+        "
+        != "{Quote}"
+        "
+        != "{block:Source}"
+        .source
+          != "{Source}"
+        != "{/block:Source}"
+      != "{/block:Quote}"
+
+      != "{block:Link}"
+      %li{:class => ["post","link"]}
+        %a{:href => "{URL}", :class => "link", :target => "{Target}"}
+          != "{Name}"
+        != "{block:Description}"
+        .description
+          != "{Description}"
+        != "{/block:Description}"
+        
+        
+          
+        
+      
+      
+        
+              
+        
 
       != "{/block:Posts}"
 
