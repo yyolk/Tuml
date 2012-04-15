@@ -18,11 +18,11 @@
       != "{Description}"
     != "{/block:Description}"
 
-    %ol#posts
+    %div#posts.container
       != "{block:Posts}"
       
       != "{block:Text}"
-      %li{:class => ["post", "text"]}
+      %div{:class => ["post", "text"]}
         != "{block:Title}"
         %h3
           %a{:href => "{Permalink}"}
@@ -33,7 +33,7 @@
       
 
       != "{block:Photo}"
-      %li{:class => ["post", "photoset"]}
+      %div{:class => ["post", "photoset"]}
         %img{:src => "{PhotoURL-500}", :alt => "{PhotoAlt}"}
         != "{block:Caption}"
         .caption
@@ -43,7 +43,7 @@
 
 
       != "{block:Photoset}"
-      %li{:class => ["post", "photoset"]}
+      %div{:class => ["post", "photoset"]}
         != "{Photoset-500}"
         != "{block:Caption}"
         .caption
@@ -53,7 +53,7 @@
 
 
       != "{block:Quote}"
-      %li{:class => ["post", "quote"]}
+      %div{:class => ["post", "quote"]}
         "
         != "{Quote}"
         "
@@ -64,7 +64,7 @@
       != "{/block:Quote}"
 
       != "{block:Link}"
-      %li{:class => ["post","link"]}
+      %div{:class => ["post","link"]}
         %a{:href => "{URL}", :class => "link", :target => "{Target}"}
           != "{Name}"
         != "{block:Description}"
@@ -74,7 +74,7 @@
       != "{/block:Link}"  
        
       != "{block:Chat}"     
-      %li{:class => ["post", "chat"]}        
+      %div{:class => ["post", "chat"]}        
         != "{block:Title}"
         %h3
           %a{:href => "{Permalink}", :alt => "Permalink" }
@@ -93,7 +93,7 @@
       != "{/block:Chat}}"
 
       != "{block:Video}"
-      %li{:class => ["post", "audio"]}
+      %div{:class => ["post", "audio"]}
         != "{Video-500}"
         != "{block:Caption}"
         .caption
@@ -102,7 +102,7 @@
       != "{/block:Vieo}"
 
       != "{block:Audio}"
-      %li{:class => ["post","audio"]}
+      %div{:class => ["post","audio"]}
         != "{AudioPlayerBlack}"
         != "{block:Caption}"
         .caption
